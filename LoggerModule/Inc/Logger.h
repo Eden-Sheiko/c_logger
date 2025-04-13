@@ -14,7 +14,7 @@ typedef enum {
 
 void logger_init();
 
-void logger(log_level_t, const char*, ...);
+void logger(log_level_t, const char* tag, const char* format, ...);
 
 #define LOG_INFO(...)  logger(LOG_LEVEL_INFO,  __FILE__, __LINE__, __VA_ARGS__)
 #define LOG_WARN(...)  logger(LOG_LEVEL_WARN,  __FILE__, __LINE__, __VA_ARGS__)
