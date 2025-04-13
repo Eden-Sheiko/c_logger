@@ -27,7 +27,7 @@ void logger(log_level_t level, const char* tag, const char* format, ...){
         break;
     }
 
-    printf("[%s][%s] ", level_str, tag);
+    printf("[%s] [%s] ", level_str, tag);
 
     va_start(args, format);
     vprintf(format, args);
