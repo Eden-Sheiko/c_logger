@@ -7,7 +7,7 @@ void logger_init(){
 void logger(log_level_t level, const char* tag, const char* format, ...){
     va_list args;
 
-    const char *level_str;
+    const char *level_str = NULL;
 
     switch (level) {
         case LOG_LEVEL_INFO:
