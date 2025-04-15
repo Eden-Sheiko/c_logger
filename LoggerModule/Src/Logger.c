@@ -1,6 +1,6 @@
 #include "../Inc/Logger.h"
 
-void logger_init(){
+void logger_init(const logger_config_t* config){
 
 }
 

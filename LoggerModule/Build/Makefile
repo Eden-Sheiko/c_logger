@@ -1,6 +1,6 @@
 # === Variables ===
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c11 -I../Inc
+CFLAGS = -Wall -Wextra -pedantic -std=c11 -I../Inc
 TARGET = logger_test
 
 SRC_DIR = ../Src
