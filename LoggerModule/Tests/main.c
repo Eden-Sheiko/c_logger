@@ -21,6 +21,7 @@ int main(void) {
     // === Empty tag and message ===
     logger(LOG_LEVEL_INFO, "", "");
 
+
     return 0;
 
 }
