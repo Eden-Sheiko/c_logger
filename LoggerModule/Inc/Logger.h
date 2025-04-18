@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <time.h>
+#include <pthread.h>
 
 #ifndef LOGGER_H
 #define LOGGER_H

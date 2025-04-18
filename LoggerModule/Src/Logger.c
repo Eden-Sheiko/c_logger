@@ -2,13 +2,25 @@
 
 static bool prv_ts = 0;
 
+static bool prv_safe = 0;
+
+static pthread_mutex_t logger_mutex;
+
 void logger_init(const logger_config_t* config){
     if (config->timestamp){
         prv_ts = 1;
     }
+    if (config->thread_safe){
+      	prv_safe = 1;
+        pthread_mutex_init(&logger_mutex, NULL);
+    }
 }
 
 void logger(log_level_t level, const char* tag, const char* format, ...){
+	if (prv_safe) {
+        pthread_mutex_lock(&logger_mutex);
+    }
+
     va_list args;
 
     const char *level_str = NULL;
@@ -46,4 +58,8 @@ void logger(log_level_t level, const char* tag, const char* format, ...){
     va_end(args);
 
     printf("\n");
+
+    if (prv_safe) {
+        pthread_mutex_unlock(&logger_mutex);
+    }
 }

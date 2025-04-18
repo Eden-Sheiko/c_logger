@@ -4,7 +4,7 @@ static const char* Tag = "LINUX";
 
 int main(void) {
     logger_config_t config = {
-    .timestamp = 1, .thread_safe = 0
+    .timestamp = 1, .thread_safe = 1
     };
     logger_init(&config);
 
