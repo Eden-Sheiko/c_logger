@@ -15,12 +15,20 @@ typedef enum {
     LOG_LEVEL_DEBUG
 } log_level_t;
 
+typedef enum my_module_error_e
+{
+    /// No error
+    LOGGER_ERROR_OK = 0,
+    /// Out of memory
+    LOGGER_ERROR_NOMEM,
+} my_module_error_t;
+
 typedef struct logger_config_s{
     bool timestamp;
     bool thread_safe; // to add in the futre
 } logger_config_t;
 
-void logger_init(const logger_config_t*);
+my_module_error_t logger_init(const logger_config_t*);
 
 void logger(log_level_t, const char* tag, const char* format, ...);
 
